@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dogGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f7f3" />
+      <stop offset="100%" stop-color="#b4e5da" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#dogGrad)" />
+  <g transform="translate(150, 60)" fill="#3b6f7a">
+    <!-- Cabeça de Cãozinho Estilizada -->
+    <path d="M 50 40 C 20 40 10 70 10 95 C 10 135 40 160 50 160 C 60 160 90 135 90 95 C 90 70 80 40 50 40 Z" fill="#ffffff" stroke="#3b6f7a" stroke-width="4" />
+    <!-- Orelhas Caídas -->
+    <path d="M 15 50 C -5 60 -10 110 5 125 C 15 130 25 90 20 60 Z" fill="#6ba4a9" />
+    <path d="M 85 50 C 105 60 110 110 95 125 C 85 130 75 90 80 60 Z" fill="#6ba4a9" />
+    <!-- Focinho e Olhinhos -->
+    <circle cx="35" cy="85" r="5" fill="#2d5a63" />
+    <circle cx="65" cy="85" r="5" fill="#2d5a63" />
+    <ellipse cx="50" cy="110" rx="10" ry="7" fill="#2d5a63" />
+    <path d="M 50 117 L 50 128 M 50 128 C 42 133 38 128 38 125 M 50 128 C 58 133 62 128 62 125" stroke="#2d5a63" stroke-width="3" fill="none" stroke-linecap="round" />
+  </g>
+  <text x="200" y="240" font-family="'Nunito', Arial, sans-serif" font-size="16" font-weight="700" fill="#2d5a63" text-anchor="middle">Amigo Cãozinho • Petfy</text>
+</svg>

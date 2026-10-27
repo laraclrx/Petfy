@@ -1,0 +1,625 @@
+/* ============================================================
+   PETFY – FOLHA DE ESTILOS: GRADE DE PETS, CATÁLOGO E DETALHES
+   Componentes Visuais Modernos, Interativos e Responsivos
+   ============================================================ */
+
+/* ============================================================
+   CABEÇALHO DO CATÁLOGO DE ADOÇÃO
+   ============================================================ */
+.pets-catalog-header {
+    background: linear-gradient(180deg, #c7f2e7 0%, #edf9f5 100%);
+    padding: 110px 24px 45px 24px;
+    text-align: center;
+    position: relative;
+    border-radius: 0 0 40px 40px;
+}
+
+.pets-catalog-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--brand-teal-darker);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.pets-catalog-header p {
+    color: var(--brand-teal-dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 8px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================
+   LAYOUT DO CATÁLOGO (FILTROS + GRADE)
+   ============================================================ */
+.pets-catalog-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 36px 24px 90px 24px;
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 36px;
+    align-items: start;
+}
+
+/* Barra Lateral de Filtros */
+.filters-sidebar {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 95px;
+    transition: var(--transition-base);
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filters-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--brand-teal-darker);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+}
+
+.btn-clear-filters {
+    font-size: 0.85rem;
+    color: #ef4444;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    background: #fef2f2;
+    transition: var(--transition-fast);
+}
+.btn-clear-filters:hover {
+    background: #fee2e2;
+    transform: scale(1.04);
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.filter-select, .filter-input {
+    width: 100%;
+    padding: 11px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    outline: none;
+    font-size: 0.92rem;
+    background: #ffffff;
+    color: var(--text-primary);
+    transition: var(--transition-base);
+}
+
+.filter-select:focus, .filter-input:focus {
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 3.5px rgba(93, 173, 159, 0.2);
+}
+
+.btn-apply-filters {
+    width: 100%;
+    background: var(--brand-teal-dark);
+    color: #ffffff;
+    border: none;
+    padding: 13px;
+    border-radius: var(--radius-full);
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(45, 106, 90, 0.25);
+    transition: var(--transition-base);
+}
+
+.btn-apply-filters:hover {
+    background: var(--brand-teal-darker);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(45, 106, 90, 0.35);
+}
+
+/* Área da Grade de Resultados */
+.pets-results-area {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.results-info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.results-info-bar strong {
+    color: var(--brand-teal-darker);
+    font-weight: 800;
+}
+
+.pets-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 28px;
+}
+
+/* ============================================================
+   CARD DE PET INDIVIDUAL ELEVADO
+   ============================================================ */
+.pet-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-bounce);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(93, 173, 159, 0.4);
+}
+
+.pet-card-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.pet-card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pet-card:hover .pet-card-image-wrap img {
+    transform: scale(1.08);
+}
+
+.pet-card-badge-status {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(6px);
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--brand-teal-darker);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.pet-card-badge-status.adotado {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.pet-card-badge-especie {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: var(--brand-teal-darker);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.pet-card-body {
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.pet-card-name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.pet-card-name {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--brand-teal-darker);
+    letter-spacing: -0.3px;
+}
+
+.pet-card-sex {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+.pet-card-sex.macho { color: #3b82f6; }
+.pet-card-sex.femea { color: #ec4899; }
+
+.pet-card-breed {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.pet-card-attributes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.pet-attr-pill {
+    background: var(--brand-mint-light);
+    color: var(--brand-teal-darker);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid rgba(93, 173, 159, 0.2);
+}
+
+.pet-card-location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.pet-card-location i {
+    color: var(--brand-teal);
+    font-size: 0.95rem;
+}
+
+.btn-card-adopt {
+    margin-top: 16px;
+    width: 100%;
+    background: var(--brand-teal);
+    color: #ffffff;
+    border: none;
+    padding: 11px;
+    border-radius: var(--radius-full);
+    font-weight: 800;
+    font-size: 0.94rem;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 12px rgba(93, 173, 159, 0.25);
+}
+
+.btn-card-adopt:hover {
+    background: var(--brand-teal-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(93, 173, 159, 0.35);
+    color: #ffffff;
+}
+
+/* Estado Vazio */
+.empty-results-box {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 70px 24px;
+    text-align: center;
+    border: 2px dashed var(--border-color);
+}
+
+.empty-results-box i {
+    font-size: 4rem;
+    color: var(--brand-mint-deep);
+    margin-bottom: 18px;
+}
+
+.empty-results-box h3 {
+    font-family: var(--font-heading);
+    color: var(--brand-teal-darker);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.empty-results-box p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 440px;
+    margin: 0 auto 24px auto;
+}
+
+/* ============================================================
+   PÁGINA DE DETALHES DO PET (pet-detalhes.php)
+   ============================================================ */
+.pet-details-container {
+    max-width: 1100px;
+    margin: 110px auto 70px auto;
+    padding: 0 24px;
+}
+
+.btn-back-catalog {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brand-teal-darker);
+    font-weight: 800;
+    font-size: 0.98rem;
+    margin-bottom: 26px;
+    padding: 8px 18px;
+    background: #ffffff;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-xs);
+    border: 1px solid var(--border-color);
+}
+
+.btn-back-catalog:hover {
+    background: var(--brand-mint-light);
+    transform: translateX(-4px);
+}
+
+.pet-details-card {
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.15fr 1.35fr;
+}
+
+.pet-details-photo-col {
+    position: relative;
+    background: #f1f5f9;
+    min-height: 480px;
+}
+
+.pet-details-photo-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet-details-content-col {
+    padding: 44px 44px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.details-pet-name {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--brand-teal-darker);
+    letter-spacing: -0.5px;
+}
+
+.details-pet-breed {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.details-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.info-chip-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    text-align: center;
+}
+
+.info-chip-card small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.info-chip-card strong {
+    color: var(--brand-teal-darker);
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.details-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--brand-teal-darker);
+    font-weight: 800;
+    margin: 20px 0 10px 0;
+}
+
+.health-status-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.health-badge {
+    padding: 7px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.health-badge.yes {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+.health-badge.no {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.pet-description-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+.tutor-contact-box {
+    background: var(--brand-mint-light);
+    border: 1px solid rgba(93, 173, 159, 0.3);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin-bottom: 28px;
+}
+
+.tutor-contact-box h4 {
+    color: var(--brand-teal-darker);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+}
+
+.tutor-contact-box p {
+    font-size: 0.92rem;
+    color: #335d53;
+    margin: 3px 0;
+}
+
+.details-actions-bar {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+}
+
+/* ============================================================
+   MODAL DE ADOÇÃO COM BACKDROP ELEVADO
+   ============================================================ */
+.modal-adopt-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 77, 64, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.modal-adopt-overlay.active {
+    display: flex;
+}
+
+.modal-adopt-card {
+    background: #ffffff;
+    border-radius: var(--radius-xl);
+    padding: 40px 36px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: zoomModal 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes zoomModal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-adopt-close {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    background: var(--brand-mint-light);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: var(--brand-teal-darker);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsividade de Catálogo e Detalhes */
+@media (max-width: 960px) {
+    .pets-catalog-layout {
+        grid-template-columns: 1fr;
+    }
+    .filters-sidebar {
+        position: static;
+    }
+    .pet-details-card {
+        grid-template-columns: 1fr;
+    }
+    .pet-details-photo-col {
+        min-height: 300px;
+    }
+    .pet-details-content-col {
+        padding: 30px 24px;
+    }
+}

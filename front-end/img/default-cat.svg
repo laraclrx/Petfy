@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#bfdbfe" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#catGrad)" />
+  <g transform="translate(150, 60)" fill="#1e40af">
+    <!-- Cabeça de Gatinho -->
+    <circle cx="50" cy="100" r="45" fill="#ffffff" stroke="#2563eb" stroke-width="4" />
+    <!-- Orelhas pontudas -->
+    <polygon points="12,75 30,25 45,65" fill="#60a5fa" stroke="#2563eb" stroke-width="3" />
+    <polygon points="88,75 70,25 55,65" fill="#60a5fa" stroke="#2563eb" stroke-width="3" />
+    <!-- Olhos e focinho -->
+    <ellipse cx="35" cy="95" rx="5" ry="7" fill="#1e3a8a" />
+    <ellipse cx="65" cy="95" rx="5" ry="7" fill="#1e3a8a" />
+    <polygon points="50,110 44,103 56,103" fill="#f43f5e" />
+    <path d="M 50 110 L 50 118 M 50 118 C 42 122 38 118 38 115 M 50 118 C 58 122 62 118 62 115" stroke="#1e3a8a" stroke-width="3" fill="none" stroke-linecap="round" />
+    <!-- Bigodes -->
+    <line x1="25" y1="108" x2="5" y2="105" stroke="#93c5fd" stroke-width="2" />
+    <line x1="25" y1="113" x2="5" y2="117" stroke="#93c5fd" stroke-width="2" />
+    <line x1="75" y1="108" x2="95" y2="105" stroke="#93c5fd" stroke-width="2" />
+    <line x1="75" y1="113" x2="95" y2="117" stroke="#93c5fd" stroke-width="2" />
+  </g>
+  <text x="200" y="240" font-family="'Nunito', Arial, sans-serif" font-size="16" font-weight="700" fill="#1e3a8a" text-anchor="middle">Amigo Gatinho • Petfy</text>
+</svg>

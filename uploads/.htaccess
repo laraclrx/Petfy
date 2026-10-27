@@ -1,0 +1,25 @@
+# Proteção de segurança para a pasta de uploads do Petfy
+# Impede a execução direta de qualquer script executável
+
+# Desativa execução de PHP se o módulo estiver presente
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# Bloqueia o acesso a extensões de scripts potencialmente perigosos
+<FilesMatch "\.(php|phtml|php3|php4|php5|phps|cgi|pl|exe|sh|py|jsp|asp|htm|html)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Garante que apenas imagens e arquivos de mídia estáticos sejam servidos
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
